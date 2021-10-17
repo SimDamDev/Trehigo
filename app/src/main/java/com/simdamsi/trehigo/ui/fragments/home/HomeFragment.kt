@@ -1,12 +1,10 @@
 package com.simdamsi.trehigo.ui.fragments.home
 
 import android.content.Context
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.simdamsi.trehigo.R
@@ -68,10 +66,10 @@ class HomeFragment : Fragment(), CommonFunctions {
     }
     override fun initListeners() {
 
-        /*binding.btnUser.setOnClickListener {
+        binding.btn1.setOnClickListener {
 
-            listener?.gotoFragment(R.id.userFragment)
-        }*/
+            listener?.gotoFragment(R.id.homeFragment)
+        }
 /*
         binding.btnPost.setOnClickListener {
 
