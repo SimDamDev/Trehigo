@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Trehigo</string>
     <string name="loading">loading</string>
+    <string name="main_search">main search</string>
+    <string name="main_title">Ou allons nous?</string>
 </resources>

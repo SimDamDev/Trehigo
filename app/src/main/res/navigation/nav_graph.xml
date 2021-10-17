@@ -10,7 +10,6 @@
         android:name="com.simdamsi.trehigo.ui.fragments.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-
     </fragment>
 
 </navigation>

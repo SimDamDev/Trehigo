@@ -68,11 +68,11 @@ class HomeFragment : Fragment(), CommonFunctions {
     }
     override fun initListeners() {
 
-       /* binding.btnUser.setOnClickListener {
+        /*binding.btnUser.setOnClickListener {
 
             listener?.gotoFragment(R.id.userFragment)
-        }
-
+        }*/
+/*
         binding.btnPost.setOnClickListener {
 
             listener?.gotoFragment(R.id.postFragment)
@@ -99,7 +99,7 @@ class HomeFragment : Fragment(), CommonFunctions {
             listener?.gotoFragment(R.id.demoCarouselFragment)
         }
 */
-        binding.btnDarkMode.setOnClickListener {
+        /*binding.btnDarkMode.setOnClickListener {
 
             val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
@@ -109,7 +109,7 @@ class HomeFragment : Fragment(), CommonFunctions {
                 Configuration.UI_MODE_NIGHT_NO ->
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
-        }
+        }*/
     }
 
     override fun onAttach(context: Context) {

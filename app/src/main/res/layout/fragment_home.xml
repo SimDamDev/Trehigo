@@ -5,90 +5,153 @@
     tools:context=".ui.fragments.home.HomeFragment">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.simdamsi.trehigo.ui.fragments.home.HomeViewModel" />
+
     </data>
 
-    <ScrollView
-        android:id="@+id/main_container"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_container"
+    android:background="@color/tidewaterGreen"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/tidewaterGreen">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="-65dp"
+            android:layout_marginEnd="-20dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.20"
+            android:background="@drawable/logo_mountain"
+            app:tint="@color/white"></ImageView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@android:color/transparent"
+            app:elevation="0dp" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="80dp"
+            app:collapsedTitleTextAppearance="@style/AppTheme.Title.Collapsed"
+            app:expandedTitleTextAppearance="@style/AppTheme.Title.Expanded"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed"
+            app:titleEnabled="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/main_title"
+                    android:textColor="@color/setSailChampagne"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_bottom_border_tidewater_green"
+                    android:paddingTop="16dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetStart="0dp"
+                    app:elevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/background_search_bar"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="16dp"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:text="@string/main_search"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/setSailChampagne"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingBottom="32dp">
+            android:paddingTop="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                android:text="@string/app_name"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_user"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"/>
-                <!--android:text="@string/title_users"
-                app:icon="@drawable/ic_account_box_24dp"-->
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_post"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"/>
-                <!--android:text="@string/title_posts"
-                app:icon="@drawable/ic_chat_24dp" -->
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_post_paged"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"/>
-                <!--android:text="@string/title_posts_paged"
-                app:icon="@drawable/ic_chat_24dp"-->
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_custom_snackbar"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Custom Snackbar"/>
-                a<!--pp:icon="@drawable/ic_perm_device_information_24dp" -->
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_carousel"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Why Not! Image Carousel!"/>
-                a<!--pp:icon="@drawable/ic_perm_device_information_24dp" -->
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_dark_mode"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Toggle Dark Mode"/>
-                <!--app:icon="@drawable/ic_round_invert_colors_24" -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_bottom_border"
+                android:overScrollMode="never"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                app:layoutManager="GridLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_menu"
+                tools:spanCount="1"
+                tools:visibility="visible" />
 
         </LinearLayout>
-
-    </ScrollView>
-
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
